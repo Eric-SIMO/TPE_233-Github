@@ -1,0 +1,97 @@
+    Player p1 = {"Messi", 90};
+    Player p2 = {"Mbappe", 89};
+    Player p3 = {"HAaland", 89};
+    Player p4 = {"Bellingham", 90};
+    Stack sta = new_stack();    
+    Afficher(sta);
+
+    printf("\n----------------------------------------------\n\n");
+
+    sta = Empiler(sta,p1);
+    sta = Empiler(sta,p2); 
+    sta = Empiler(sta,p3);
+    sta = Empiler(sta,p4);  
+    Afficher(sta);
+    printf("La longueur de la pile est de : %d\n", height(sta));
+
+    Player last = sommet(sta);
+    printf("Le dernier joueur est %s (%d)\n", last.name, last.level);
+
+    printf("\n----------------------------------------------\n\n");
+    
+    sta = Depiler(sta);
+    Afficher(sta); 
+    printf("La longueur de la pile est de : %d\n", height(sta));
+
+    printf("\n----------------------------------------------\n\n");
+    
+    sta = reset(sta);   
+    Afficher(sta); 
+    printf("La longueur de la pile est de : %d\n", height(sta));
+
+
+    /*---------------------------------------------------------*/
+
+
+    int choix;
+    printf("******** PILES ET FILES *********");
+    printf("Sur quel strucures voulez vous travaillez : ");
+    printf("1 - Piles \n2 - Files");
+    scanf("%d",&choix);
+    switch (choix) {
+        case 1:
+        {
+            Stack sta = new_stack();
+            int choix_2;
+            char choix_3 = "O";
+            while(choix_3 = "O"){
+                printf("Que souhaitez vous faire : ");
+                printf("1.Empiler \n2.Depiler \n3.Verifier si elle est pleine \n4.Verifier si elle est vide \n5.Afficher le contenu de la pile");
+                switch(choix_2) {
+                    case 1:
+                    {
+                        int entier;
+                        printf("Veuillez saisir votre entier :");
+                        scanf("%d",&entier);
+                        sta = Empiler(sta, entier);
+                    }break;
+                
+                    case 2:
+                    {
+                       sta = Depiler(sta);
+                    }break;
+                
+                    case 3:
+                    {
+                        if(!est_vide(sta))
+                            printf("La pile contient des elements ");
+                
+                    }break;
+
+                    case 4:
+                    {
+                        if(est_Vide(sta))
+                            printf("La pile est vide");
+                
+                    }break;
+
+                    case 5:
+                    {
+                        Afficher(sta);
+                    }break;
+                
+                    default:printf("veuillez entrer une valeur valide");break;
+                }
+                printf("Voulez-vous encore travaillez sur cette pile: O/N");
+                scanf("%c",&choix_3);
+            }
+        }break;
+        case 2:
+        {
+
+        }break;
+    default:
+        break;
+    }
+
+    return 0;
