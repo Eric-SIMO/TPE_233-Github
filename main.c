@@ -15,6 +15,7 @@ int main(){
     printf("\t3 - Quitter le programme\n");
     printf("\tFaites votre choix : ");
     scanf("%d",&choix1);
+    printf("\n");
     switch (choix1)
     {
         case 1:
@@ -34,6 +35,7 @@ int main(){
                 printf("\t5 - Afficher le contenu de votre pile\n");
                 printf("\tFaites votre choix : ");
                 scanf("%d",&choix);
+                printf("\n");
                 switch (choix)
                 {
                     case 1:
@@ -109,6 +111,7 @@ int main(){
                 printf("\t5 - Afficher le contenu de votre file\n");
                 printf("\tFaites votre choix : ");
                 scanf("%d",&choix);
+                printf("\n");
                 switch (choix)
                 {
                     case 1:
